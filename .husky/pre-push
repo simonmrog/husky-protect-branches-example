@@ -5,7 +5,7 @@ echo -e "Checking branch name..."
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 PROTECTED_BRANCHES="^(main|develop)"
 
-echo $2 != "$BRANCH"
+echo $2
 if [[ $1 != "origin" && $2 != "$BRANCH" ]]
 then
   echo -e "🚫 You must use (git push origin $BRANCH)\n" && exit 1
