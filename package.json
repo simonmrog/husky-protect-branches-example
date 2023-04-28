@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/simonmrog/husky-protect-branches-example#readme",
   "devDependencies": {
-    "husky": "^8.0.3"
+    "husky": "^8.0.0"
   },
   "husky": {
     "hooks": {
