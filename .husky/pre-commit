@@ -5,7 +5,7 @@ branchName=$(git branch | grep '*' | sed 's/* //')
 
 if [ $branchName == 'main' ]
 then
-  echo -e "🚫 Commit directly to main branch is not allowed, please create your own branch and send a pull request" && exit 
+  echo -e "🚫 Commit directly to main branch is not allowed, please create your own branch and send a pull request" && exit 1
 fi
 
 if [ $branchName == 'develop' ]
