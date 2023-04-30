@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo -e "Checking branch name..."
+
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+PROTECTED_BRANCHES="^(main|develop)"
+
+BRANCH_TO_PUSH=$(ps -ocommand= -p $PPID | cut -d ' ' -f 4)
+if [[ "$BRANCH_TO_PUSH" != "$BRANCH" ]]
+then
+  echo -e "🚫 You are trying to push to $BRANCH_TO_PUSH, but you must use (git push origin $BRANCH)\n" && exit 1
+fi
+
+if [[ "$BRANCH" =~ $PROTECTED_BRANCHES ]]
+then
+  echo -e "\n🚫 Cannot push to remote $BRANCH branch, please create your own branch and send a pull request" && exit 1
+fi
+
+echo -e ">> Finished checking branch name." && exit 0

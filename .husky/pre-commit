@@ -5,24 +5,17 @@ branchName=$(git branch | grep '*' | sed 's/* //')
 
 if [ $branchName == 'main' ]
 then
-  echo -e "\n🚫 Commit directly to main branch is not allowed!"
+  echo -e "🚫 Commit directly to main branch is not allowed, please create your own branch and send a pull request" && exit 
 fi
 
 if [ $branchName == 'develop' ]
 then
-  echo -e "\n🚫 Cannot push to remote develop branch, please create your own branch and send a PR"
+  echo -e "🚫 Cannot push to remote develop branch, please create your own branch and send a pull request" && exit 1
 fi
 
 if [[ $branchName = *[![:ascii:]]* ]]
 then
-  echo -e "\n🚫 Branch name should not have any ascii and upper case letters, please rename your branch name\n" && exit 1
+  echo -e "🚫 Branch name should not have any ascii, please rename your branch name" && exit 1
 fi
 
-if [[ $branchName =~ [A-Z] ]]
-then
-  echo -e "\n🚫 Branch name should not have any ascii and upper case letters, please rename your branch name\n" && exit 1
-fi
-
-echo -e ">> Finish checking branch name"
-
-exit 0
+echo -e ">> Finished checking branch name." && exit 0
