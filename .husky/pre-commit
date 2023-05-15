@@ -10,7 +10,7 @@ fi
 
 if [ $branchName == 'develop' ]
 then
-  echo -e "🚫 Cannot push to remote develop branch, please create your own branch and send a pull request" && exit 1
+  echo -e "🚫 Commit directly to develop branch is not allowed, please create your own branch and send a pull request" && exit 1
 fi
 
 if [[ $branchName = *[![:ascii:]]* ]]
