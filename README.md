@@ -2,9 +2,15 @@
 
 ## Follow these steps every time you download a new project
 
-- Copy the content of the .husky/ folder on the repo you want to work on
-- Run: "npm install" to install the husky dependency
-- Add this script in the package.json scripts:
-  "prepare:husky": "husky install && sh .husky/config-husky.sh
-- Run: "npm run prepare:husky"
+- "npm install -D husky" to install the Husky package
+
+- Copy the the .husky/ folder in the root directory of the repo you want to work on
+
+- Add these scripts in the package.json scripts:
+
+  - "prepare:husky": "husky install"
+  - "prepare:husky-permissions-mac-linux": "sh .husky/config-husky-mac-linux.sh"
+
+- In case you've got any trouble running Husky hooks, run: "npm run prepare:husky-permissions-mac-linux"
+
 - You are ready to go :)
