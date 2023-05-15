@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare:husky-permissions-mac-linux": "husky install && sh .husky/config-husky-mac-linux.sh"
+    "prepare:husky": "husky install",
+    "prepare:husky-permissions-mac-linux": "sh .husky/config-husky-mac-linux.sh"
   },
   "repository": {
     "type": "git",
